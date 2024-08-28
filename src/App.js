@@ -13,8 +13,28 @@ function App() {
   }, []);
   const getPizza = () => {
     axios
-      .get("http://localhost:3020/pizza")
+      .get("https://my-json-server.typicode.com/wagakir/react-pizza/test")
       .then((res) => setPizzasArray(res.data));
+  };
+  const postPizza = () => {
+    axios
+      .post(
+        "https://my-json-server.typicode.com/wagakir/react-pizza/test",
+        1
+
+        // {
+        //   id: Math.floor(Math.random() * 100000),
+        //   imageUrl:
+        //     "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+        //   title: "Пепперони Фреш с перцем",
+        //   types: [0, 1],
+        //   sizes: [26, 30, 40],
+        //   price: Math.floor(Math.random() * 100000),
+        //   category: 0,
+        //   rating: 4,
+        // }
+      )
+      .catch(alert("err"));
   };
   return (
     <div className="App">
@@ -23,9 +43,11 @@ function App() {
         <button
           className="button"
           onClick={() => {
-            getPizza();
+            postPizza();
           }}
-        ></button>
+        >
+          post pizza
+        </button>
         <div className="content">
           <div className="container">
             <div className="content__top">
@@ -35,7 +57,8 @@ function App() {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
               {pizzasArray.map((obj) => (
-                <PizzaBlock {...obj} />
+                <div>{obj}</div>
+                // <PizzaBlock {...obj} />
               ))}
             </div>
           </div>
