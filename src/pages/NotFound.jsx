@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import styles from "../scss/pages/NotFound.module.scss";
 const NotFound = (props) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
+      <span>🙁</span>
       <h1>Этой страницы не существует!</h1>
-      <br />
+
       <Link to="/">
-        <p>перейти на главную</p>
+        <h2>перейти на главную</h2>
       </Link>
     </div>
   );
