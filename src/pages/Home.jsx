@@ -16,20 +16,18 @@ const Home = (props) => {
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <div className="content__top">
-          <Categories />
-          <Sort />
-        </div>
-        <h2 className="content__title">Все пиццы</h2>
-        <div className="content__items">
-          {pizzasArray.map((obj) =>
-            obj ? <PizzaBlock {...obj} key={obj.id} /> : <PizzaLoader />
-          )}
-        </div>
+    <div className="home">
+      <div className="top">
+        <Categories />
+        <Sort />
       </div>
-    </>
+      <h2 className="title">Все пиццы</h2>
+      <div className="items">
+        {pizzasArray.map((obj) =>
+          obj ? <PizzaBlock {...obj} key={obj.id} /> : <PizzaLoader />
+        )}
+      </div>
+    </div>
   );
 };
 

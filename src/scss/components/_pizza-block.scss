@@ -1,16 +1,11 @@
 @import "../variables";
 
 .pizza-block {
-  width: 280px;
+  width: 250px;
   text-align: center;
-  margin-bottom: 65px;
-
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
-  }
 
   &__image {
-    width: 260px;
+    width: 235px;
   }
 
   &__title {
@@ -37,11 +32,11 @@
 
       li {
         padding: 8px;
-        flex: 1;
+        width: 240px;
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
-        @include noselect();
+
         &.active {
           background: #ffffff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);

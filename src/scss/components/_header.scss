@@ -7,14 +7,16 @@
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 
   &__logo {
     display: flex;
     flex: 1;
-
+    @media (max-width: 650px) {
+      padding: 0 0 20px;
+    }
     img {
       margin-right: 15px;
     }
